@@ -1,0 +1,1015 @@
+/dts-v1/;
+
+/ {
+        description = "Kernel fitImage for Arago/6.6.58+git/am62xx-evm";
+        #address-cells = <1>;
+
+        images {
+                kernel-1 {
+                        description = "Linux kernel";
+                        data = /incbin/("linux.bin");
+                        type = "kernel";
+                        arch = "arm64";
+                        os = "linux";
+                        compression = "gzip";
+                        load = <0x81000000>;
+                        entry = <0x81000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-sk.dtb {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-sk.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-verdin-nonwifi-mallow.dtb {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-verdin-nonwifi-mallow.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-verdin-nonwifi-dev.dtb {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-verdin-nonwifi-dev.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-beagleplay.dtb {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-beagleplay.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-minimal.dtb {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-minimal.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-verdin-nonwifi-dahlia.dtb {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-verdin-nonwifi-dahlia.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-phyboard-lyra-rdk.dtb {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-phyboard-lyra-rdk.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-verdin-nonwifi-yavia.dtb {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-verdin-nonwifi-yavia.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-verdin-wifi-dev.dtb {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-verdin-wifi-dev.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-verdin-wifi-dahlia.dtb {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-verdin-wifi-dahlia.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-verdin-wifi-mallow.dtb {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-verdin-wifi-mallow.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-verdin-wifi-yavia.dtb {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-verdin-wifi-yavia.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83000000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-beagleplay-csi2-ov5640.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-beagleplay-csi2-ov5640.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-sk-lincolntech-lcd185-panel.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-sk-lincolntech-lcd185-panel.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-sk-mcspi-loopback.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-sk-mcspi-loopback.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-sk-m2-cc3301.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-sk-m2-cc3301.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-sk-ecap-capture.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-sk-ecap-capture.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-beagleplay-csi2-tevi-ov5640.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-beagleplay-csi2-tevi-ov5640.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-beagleplay-lincolntech-lcd185-panel.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-beagleplay-lincolntech-lcd185-panel.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-sk-rpi-hdr-ehrpwm.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-sk-rpi-hdr-ehrpwm.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am625-sk-microtips-mf101hie-panel.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am625-sk-microtips-mf101hie-panel.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am62x-sk-dmtimer-pwm.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am62x-sk-dmtimer-pwm.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am62x-sk-microtips-mf103hie-lcd2.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am62x-sk-microtips-mf103hie-lcd2.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am62x-sk-csi2-ov5640.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am62x-sk-csi2-ov5640.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am62x-sk-pwm.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am62x-sk-pwm.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am62x-sk-fastboot-disable-hdmi.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am62x-sk-fastboot-disable-hdmi.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am62x-sk-csi2-tevi-ov5640.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am62x-sk-csi2-tevi-ov5640.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am62x-sk-lpm-wkup-sources.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am62x-sk-lpm-wkup-sources.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am62x-sk-eqep.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am62x-sk-eqep.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am62x-sk-hdmi-audio.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am62x-sk-hdmi-audio.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am62x-sk-csi2-v3link-fusion.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am62x-sk-csi2-v3link-fusion.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am62x-sk-csi2-imx219.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am62x-sk-csi2-imx219.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+                fdt-ti_k3-am62x-sk-mcan.dtbo {
+                        description = "Flattened Device Tree blob";
+                        data = /incbin/("arch/arm64/boot/dts/ti/k3-am62x-sk-mcan.dtbo");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x83080000>;
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                };
+	};
+
+        configurations {
+                default = "conf-ti_k3-am625-sk.dtb";
+                conf-ti_k3-am625-sk.dtb {
+                        description = "1 Linux kernel, FDT blob";
+                        
+                        kernel = "kernel-1";
+                        fdt = "fdt-ti_k3-am625-sk.dtb";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "kernel", "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-verdin-nonwifi-mallow.dtb {
+                        description = "0 Linux kernel, FDT blob";
+                        
+                        kernel = "kernel-1";
+                        fdt = "fdt-ti_k3-am625-verdin-nonwifi-mallow.dtb";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "kernel", "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-verdin-nonwifi-dev.dtb {
+                        description = "0 Linux kernel, FDT blob";
+                        
+                        kernel = "kernel-1";
+                        fdt = "fdt-ti_k3-am625-verdin-nonwifi-dev.dtb";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "kernel", "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-beagleplay.dtb {
+                        description = "0 Linux kernel, FDT blob";
+                        
+                        kernel = "kernel-1";
+                        fdt = "fdt-ti_k3-am625-beagleplay.dtb";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "kernel", "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-minimal.dtb {
+                        description = "0 Linux kernel, FDT blob";
+                        
+                        kernel = "kernel-1";
+                        fdt = "fdt-ti_k3-am625-minimal.dtb";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "kernel", "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-verdin-nonwifi-dahlia.dtb {
+                        description = "0 Linux kernel, FDT blob";
+                        
+                        kernel = "kernel-1";
+                        fdt = "fdt-ti_k3-am625-verdin-nonwifi-dahlia.dtb";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "kernel", "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-phyboard-lyra-rdk.dtb {
+                        description = "0 Linux kernel, FDT blob";
+                        
+                        kernel = "kernel-1";
+                        fdt = "fdt-ti_k3-am625-phyboard-lyra-rdk.dtb";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "kernel", "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-verdin-nonwifi-yavia.dtb {
+                        description = "0 Linux kernel, FDT blob";
+                        
+                        kernel = "kernel-1";
+                        fdt = "fdt-ti_k3-am625-verdin-nonwifi-yavia.dtb";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "kernel", "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-verdin-wifi-dev.dtb {
+                        description = "0 Linux kernel, FDT blob";
+                        
+                        kernel = "kernel-1";
+                        fdt = "fdt-ti_k3-am625-verdin-wifi-dev.dtb";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "kernel", "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-verdin-wifi-dahlia.dtb {
+                        description = "0 Linux kernel, FDT blob";
+                        
+                        kernel = "kernel-1";
+                        fdt = "fdt-ti_k3-am625-verdin-wifi-dahlia.dtb";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "kernel", "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-verdin-wifi-mallow.dtb {
+                        description = "0 Linux kernel, FDT blob";
+                        
+                        kernel = "kernel-1";
+                        fdt = "fdt-ti_k3-am625-verdin-wifi-mallow.dtb";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "kernel", "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-verdin-wifi-yavia.dtb {
+                        description = "0 Linux kernel, FDT blob";
+                        
+                        kernel = "kernel-1";
+                        fdt = "fdt-ti_k3-am625-verdin-wifi-yavia.dtb";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "kernel", "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-beagleplay-csi2-ov5640.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am625-beagleplay-csi2-ov5640.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-sk-lincolntech-lcd185-panel.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am625-sk-lincolntech-lcd185-panel.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-sk-mcspi-loopback.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am625-sk-mcspi-loopback.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-sk-m2-cc3301.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am625-sk-m2-cc3301.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-sk-ecap-capture.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am625-sk-ecap-capture.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-beagleplay-csi2-tevi-ov5640.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am625-beagleplay-csi2-tevi-ov5640.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-beagleplay-lincolntech-lcd185-panel.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am625-beagleplay-lincolntech-lcd185-panel.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-sk-rpi-hdr-ehrpwm.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am625-sk-rpi-hdr-ehrpwm.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am625-sk-microtips-mf101hie-panel.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am625-sk-microtips-mf101hie-panel.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am62x-sk-dmtimer-pwm.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am62x-sk-dmtimer-pwm.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am62x-sk-microtips-mf103hie-lcd2.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am62x-sk-microtips-mf103hie-lcd2.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am62x-sk-csi2-ov5640.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am62x-sk-csi2-ov5640.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am62x-sk-pwm.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am62x-sk-pwm.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am62x-sk-fastboot-disable-hdmi.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am62x-sk-fastboot-disable-hdmi.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am62x-sk-csi2-tevi-ov5640.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am62x-sk-csi2-tevi-ov5640.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am62x-sk-lpm-wkup-sources.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am62x-sk-lpm-wkup-sources.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am62x-sk-eqep.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am62x-sk-eqep.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am62x-sk-hdmi-audio.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am62x-sk-hdmi-audio.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am62x-sk-csi2-v3link-fusion.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am62x-sk-csi2-v3link-fusion.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am62x-sk-csi2-imx219.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am62x-sk-csi2-imx219.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+                
+                conf-ti_k3-am62x-sk-mcan.dtbo {
+                        description = "0 FDT blob";
+                        
+                        
+                        fdt = "fdt-ti_k3-am62x-sk-mcan.dtbo";
+                        
+                        
+                        
+                        hash-1 {
+                                algo = "sha512";
+                        };
+                        signature-1 {
+                                algo = "sha512,rsa4096";
+                                key-name-hint = "custMpk";
+                                padding = "pkcs-1.5";
+                                sign-images = "fdt";
+                        };
+                };
+	};
+};
