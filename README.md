@@ -22,7 +22,7 @@ Tested on Ubuntu 22.04 LTS
 ## Hardware accessories
 | Accessory | Webpage |
 | ------- | ------- |
-| Microtips Technology USA (13-101HIEB0HF0-S) 10.1” WUXGA (1920x1200) TFT LCD panel| https://www.mouser.com/ProductDetail/Microtips-Technology/13-101HIEB0HF0-S?qs=DPoM0jnrROXJrKZYvbz3FA%3D%3D&srsltid=AfmBOorKORGzalueJGCw2ChjjN7NUauDYRYaTD_HsNdv9yGw2tSbZWaA|
+| Microtips Technology USA (13-101HIEB0HF0-S) 10.1” WUXGA (1920x1200) TFT LCD panel| [Get from mouser.com](https://www.mouser.com/ProductDetail/Microtips-Technology/13-101HIEB0HF0-S?qs=DPoM0jnrROXJrKZYvbz3FA%3D%3D&srsltid=AfmBOorKORGzalueJGCw2ChjjN7NUauDYRYaTD_HsNdv9yGw2tSbZWaA)|
 
 ## Package versions
 | Package | Version | 
