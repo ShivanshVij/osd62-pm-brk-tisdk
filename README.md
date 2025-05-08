@@ -23,6 +23,9 @@ Tested on Ubuntu 22.04 LTS
 | Accessory | Webpage |
 | ------- | ------- |
 | Microtips Technology USA (13-101HIEB0HF0-S) 10.1” WUXGA (1920x1200) TFT LCD panel| [Get from mouser.com](https://www.mouser.com/ProductDetail/Microtips-Technology/13-101HIEB0HF0-S?qs=DPoM0jnrROXJrKZYvbz3FA%3D%3D&srsltid=AfmBOorKORGzalueJGCw2ChjjN7NUauDYRYaTD_HsNdv9yGw2tSbZWaA)|
+|20624: Type A 40 pin <!pitch!> FFC cable for LCD panel| !LINK NEEDED! |
+|410-358: Digilent Pcan 5C with OV5640 5MP camera|[Buy from digikey.com](https://www.digikey.com/en/products/detail/digilent-inc/410-358/8111762)|
+|20624: Type B 15 pin <!pitch!> FFC cable for LCD panel| !LINK NEEDED! |
 
 ## Package versions
 | Package | Version | 
