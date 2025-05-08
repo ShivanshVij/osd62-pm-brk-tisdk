@@ -28,6 +28,20 @@ Tested on Ubuntu 22.04 LTS
 | Linux Kernel | v6.6.58-ti | 
 
 ## Preparing an SD card
+1. Download TI AM625-SK image from this link: https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-PvdSyIiioq/10.01.10.04/tisdk-default-image-am62xx-evm-10.01.10.04.rootfs.wic.xz
+2. Uncompress the file:
+   ```
+   uxz tisdk-default-image-am62xx-evm-10.01.10.04.rootfs.wic.xz
+   ```
+3. Conect SD card to Host computer
+4. Determine the name of SD card:
+   ```
+   lsblk
+   ```
+5. Flash the image to the SD card:
+   ```
+   sudo dd if=tisdk-default-image-am62xx-evm-10.01.10.04.rootfs.wic of=/dev/sdc bs=10M conv=fdatasync status=progress
+   ```
 
 
 ## Generating images for OSD62-PM-BRK:
