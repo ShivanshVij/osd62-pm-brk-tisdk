@@ -1,0 +1,25 @@
+From e3beb26f80d037cdf6e8b7c890c0f646603b87e6 Mon Sep 17 00:00:00 2001
+From: Neeraj Dantu <dantuguf14105@gmail.com>
+Date: Tue, 6 May 2025 16:32:02 -0400
+Subject: [PATCH 4/4] Add support to enable ADC081C kernel module for
+ OSD625-PM-BRK
+
+---
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 89882a926..bc2e6647c 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -1439,6 +1439,7 @@ CONFIG_QCOM_SPMI_ADC5=m
+ CONFIG_ROCKCHIP_SARADC=m
+ CONFIG_RZG2L_ADC=m
+ CONFIG_TI_ADS1015=m
++CONFIG_TI_ADC081C=m
+ CONFIG_TI_AM335X_ADC=m
+ CONFIG_IIO_CROS_EC_SENSORS_CORE=m
+ CONFIG_IIO_CROS_EC_SENSORS=m
+-- 
+2.34.1
+
