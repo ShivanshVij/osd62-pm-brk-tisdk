@@ -1,13 +1,53 @@
-TI SDK support for OSD62-PM-BRK
-
 [![Static-badge-brk]][OSD62-PM-BRK webpage]
 [![Static-badge-pm]][OSD62-PM webpage]
 
-Generating images for OSD62-PM-BRK:
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/octavosystems/osd62-pm-brk-tisdk">
+    <img src="images/OSD62-PM-BRK-top.jpg" alt="Logo" width="540" height="286">
+  </a>
+
+  <h3 align="center">TI SDK support for OSD62-PM-BRK</h3>
+
+  <p align="center">
+    OSD62-PM Breakout Development board
+    <a href="https://octavosystems.com/octavo_products/osd62-pm-brk/"><strong>Buy OSD62-PM-BRK</strong></a>
+  </p>
+</div>
+
+## Requirements
+Tested on Ubuntu 22.04 LTS
+
+## Package versions
+| Package | Version | 
+| ------- | ------- | 
+| TI SDK version | 10.10.10.04 |
+| TF-A | v2.11.0 |
+| U-Boot | 2024.04 | 
+| Linux Kernel | v6.6.58-ti | 
+
+## Preparing an SD card
+
+
+## Generating images for OSD62-PM-BRK:
 1. Install TI Processor SDK from this link: https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-PvdSyIiioq/10.01.10.04/ti-processor-sdk-linux-am62xx-evm-10.01.10.04-Linux-x86-Install.bin
 
-2. 
+2. Run TI SDK installation:
+   ```
+   ./ti-processor-sdk-linux-am62xx-evm-10.01.10.04-Linux-x86-Install.bin
+   ```
 
+4. Follow instructions on screen. Choose Destination location: SDK_PATH
+5. Clone this repository:
+   ```
+   git clone https://github.com/octavosystems/osd62-pm-brk-tisdk
+   ```
+6. Run the setup script from osd62-pm-brk-tisdk(BRK_PATH) location
+   ```
+   ./osd625_brk_sdk_setup <PATH TO SDK>
+   ```
+7. 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [OSD62-PM-BRK webpage]: https://octavosystems.com/octavo_products/osd62-pm-brk/
