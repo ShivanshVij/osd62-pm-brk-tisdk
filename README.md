@@ -22,10 +22,11 @@ Tested on Ubuntu 22.04 LTS
 ## Hardware accessories
 | Accessory | Webpage |
 | ------- | ------- |
-| Microtips Technology USA (13-101HIEB0HF0-S) 10.1” WUXGA (1920x1200) TFT LCD panel| [Get from mouser.com](https://www.mouser.com/ProductDetail/Microtips-Technology/13-101HIEB0HF0-S?qs=DPoM0jnrROXJrKZYvbz3FA%3D%3D&srsltid=AfmBOorKORGzalueJGCw2ChjjN7NUauDYRYaTD_HsNdv9yGw2tSbZWaA)|
-|20624: Type A 40 pin <!pitch!> FFC cable for LCD panel| !LINK NEEDED! |
-|410-358: Digilent Pcan 5C with OV5640 5MP camera|[Buy from digikey.com](https://www.digikey.com/en/products/detail/digilent-inc/410-358/8111762)|
-|20624: Type B 15 pin <!pitch!> FFC cable for LCD panel| !LINK NEEDED! |
+| USB to UART adapter | [Buy from Amazon](https://www.amazon.com/HiLetgo-CP2102-Converter-Adapter-Downloader/dp/B00LODGRV8/) |
+| Microtips Technology USA (13-101HIEB0HF0-S) 10.1” WUXGA (1920x1200) TFT LCD panel| [Buy from ti.com](https://www.ti.com/tool/SK-LCD1)|
+|20624: Type A 40 pin 0.5mm pitch FPC cable for LCD panel| [Buy from Amazon](https://www.amazon.com/uxcell-Flexible-Ribbon-Player-Laptop/dp/B00W8WAICI/) |
+|410-358: Digilent Pcam 5C with OV5640 5MP camera|[Buy from digikey.com](https://www.digikey.com/en/products/detail/digilent-inc/410-358/8111762)|
+|20624: Type B 15 pin 1mm pitch FPC cable for camera module| [Buy from Amazon](https://www.amazon.com/dp/B0F1N7K82K/ref=sspa_dk_detail_2?th=1) |
 
 ## Package versions
 | Package | Version | 
@@ -116,7 +117,19 @@ The SD card is now prepared with a default TI AM625-SK image. You will need to m
 The SD card is not ready. You can insert the SD card into OSD62-PM-BRK's SD card slot.
 
 ## Powering your OSD62-PM-BRK board
+1. Connect USB to UART adapter to Host machine USB port
+2. Connect UART side of the USB to UART adapter tto UART header(JP1) of OSD62-PM-BRK
+3. Connect accessories: Camera/Display. Note that the display comes with it's own power supply. Display needs to be powered seperately from the board
+4. Bring-up a terminal application(Putty/Minicom/picocom) on host machine for the USB to UART adapter:
+   ```
+   picocom -b 115200 /dev/ttyUSB[x]
+   ```
+5. Use a USB-C cable to connect the host machine to OSD62-PM-BRK
+6. Bootlogs should appeat on the terminal application
+7. Board login username: "root". No password is set for this user.
+8. Start your application development!
 
+For technical support, please visit: https://octavosystems.com/forums/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [OSD62-PM-BRK webpage]: https://octavosystems.com/octavo_products/osd62-pm-brk/
