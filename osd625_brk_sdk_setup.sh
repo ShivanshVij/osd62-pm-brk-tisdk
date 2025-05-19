@@ -49,7 +49,6 @@ check_sdk_install() {
 
 patch_rules() {
     # Override Rules.make for OSD625-PM BRK
-    sed -i 's/INSTALL_MOD_STRIP?=1/INSTALL_MOD_STRIP?=0/' ${SDK_PATH}/Rules.make
     sed -i 's/PLATFORM?=am62xx-evm/PLATFORM?=am625-osd625-brk/' ${SDK_PATH}/Rules.make
     sed -i 's/UBOOT_MACHINE=am62x_evm_a53_defconfig/UBOOT_MACHINE=am62x_osd62x_a53_defconfig/' ${SDK_PATH}/Rules.make
     sed -i 's/UBOOT_MACHINE_R5=am62x_evm_r5_defconfig/UBOOT_MACHINE_R5=am62x_osd62x_r5_defconfig/' ${SDK_PATH}/Rules.make
