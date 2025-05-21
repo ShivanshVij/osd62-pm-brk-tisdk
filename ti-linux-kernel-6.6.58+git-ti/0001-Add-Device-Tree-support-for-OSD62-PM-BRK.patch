@@ -1,31 +1,29 @@
-From b964d1ad78888684fc899e51a295cdbcef88316b Mon Sep 17 00:00:00 2001
+From 03d0fbe5f4bc39c923c8a88db21b69fb78aa6ebb Mon Sep 17 00:00:00 2001
 From: Neeraj Dantu <dantuguf14105@gmail.com>
-Date: Wed, 21 May 2025 11:07:38 -0400
-Subject: [PATCH] Add Device Tree support for OSD62-PM-BRK board
+Date: Wed, 21 May 2025 17:20:06 -0400
+Subject: [PATCH] Add Device Tree support for OSD62-PM-BRK
 
 ---
- arch/arm64/boot/dts/ti/Makefile               |   4 +
+ arch/arm64/boot/dts/ti/Makefile               |   2 +
  .../arm64/boot/dts/ti/k3-am625-osd625-brk.dts | 624 ++++++++++++++++++
  .../dts/ti/k3-am62x-osd62x-pm-common.dtsi     |  28 +
- 3 files changed, 656 insertions(+)
+ 3 files changed, 654 insertions(+)
  create mode 100644 arch/arm64/boot/dts/ti/k3-am625-osd625-brk.dts
  create mode 100644 arch/arm64/boot/dts/ti/k3-am62x-osd62x-pm-common.dtsi
 
 diff --git a/arch/arm64/boot/dts/ti/Makefile b/arch/arm64/boot/dts/ti/Makefile
-index 6f5353121..92473e74d 100644
+index 6f5353121..39386f850 100644
 --- a/arch/arm64/boot/dts/ti/Makefile
 +++ b/arch/arm64/boot/dts/ti/Makefile
-@@ -35,6 +35,9 @@ dtb-$(CONFIG_ARCH_K3) += k3-am62-lp-sk-lincolntech-lcd185-panel.dtbo
+@@ -35,6 +35,7 @@ dtb-$(CONFIG_ARCH_K3) += k3-am62-lp-sk-lincolntech-lcd185-panel.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-am62-lp-sk-microtips-mf101hie-panel.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-am625-sk-mcspi-loopback.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-am62-lp-sk-nand.dtbo
 +dtb-$(CONFIG_ARCH_K3) += k3-am625-osd625-brk.dtb
-+dtb-$(CONFIG_ARCH_K3) += k3-am625-osd625-brk-microtips-mf101hie-panel.dtbo
-+dtb-$(CONFIG_ARCH_K3) += k3-am625-osd625-brk-csi2-ov5640.dtbo
  
  # Boards with AM62Ax SoC
  k3-am62a7-sk-ub954-evm-ov2312-dtbs := k3-am62a7-sk.dtb \
-@@ -403,6 +406,7 @@ dtb-$(CONFIG_ARCH_K3) += k3-v3link-imx219-0-0.dtbo \
+@@ -403,6 +404,7 @@ dtb-$(CONFIG_ARCH_K3) += k3-v3link-imx219-0-0.dtbo \
  			 k3-v3link-tevi-ov5640-0-3.dtbo
  
  # Enable support for device-tree overlays

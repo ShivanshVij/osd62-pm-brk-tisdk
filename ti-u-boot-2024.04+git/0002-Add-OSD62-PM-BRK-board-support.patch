@@ -1,19 +1,19 @@
-From 0ebf08296c7977d46f25c6bcb03427ecdd126e41 Mon Sep 17 00:00:00 2001
+From 0d60eaf6512a9274f94262f091a64a198e033662 Mon Sep 17 00:00:00 2001
 From: Neeraj Dantu <dantuguf14105@gmail.com>
-Date: Tue, 20 May 2025 15:54:10 -0400
-Subject: [PATCH 2/3] Add board support for OSD62-PM-BRK
+Date: Wed, 21 May 2025 17:10:53 -0400
+Subject: [PATCH] Add OSD62-PM-BRK board support
 
 ---
  board/octavo/osd62x/Kconfig        |  37 ++
  board/octavo/osd62x/MAINTAINERS    |   7 +
  board/octavo/osd62x/Makefile       |   8 +
  board/octavo/osd62x/board-cfg.yaml |  36 ++
- board/octavo/osd62x/osd62x.c       | 105 +++
+ board/octavo/osd62x/osd62x.c       | 115 ++++
  board/octavo/osd62x/osd62x.env     |  33 +
  board/octavo/osd62x/pm-cfg.yaml    |  12 +
  board/octavo/osd62x/rm-cfg.yaml    | 981 +++++++++++++++++++++++++++++
  board/octavo/osd62x/sec-cfg.yaml   | 379 +++++++++++
- 9 files changed, 1598 insertions(+)
+ 9 files changed, 1608 insertions(+)
  create mode 100644 board/octavo/osd62x/Kconfig
  create mode 100644 board/octavo/osd62x/MAINTAINERS
  create mode 100644 board/octavo/osd62x/Makefile
@@ -138,10 +138,10 @@ index 00000000..45c89dd1
 +        trace_src_enables: 0x00
 diff --git a/board/octavo/osd62x/osd62x.c b/board/octavo/osd62x/osd62x.c
 new file mode 100644
-index 00000000..a91e3391
+index 00000000..94673f93
 --- /dev/null
 +++ b/board/octavo/osd62x/osd62x.c
-@@ -0,0 +1,105 @@
+@@ -0,0 +1,115 @@
 +// SPDX-License-Identifier: GPL-2.0+
 +/*
 + * Board specific initialization for OSD62x platforms
@@ -192,6 +192,16 @@ index 00000000..a91e3391
 +int board_init(void)
 +{
 +	return 0;
++}
++
++int dram_init(void)
++{
++	return fdtdec_setup_mem_size_base();
++}
++
++int dram_init_banksize(void)
++{
++	return fdtdec_setup_memory_banksize();
 +}
 +
 +#if CONFIG_IS_ENABLED(BOARD_LATE_INIT)
