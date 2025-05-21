@@ -66,55 +66,63 @@ The SD card is now prepared with a default TI AM625-SK image. You will need to m
    ```
    git clone https://github.com/octavosystems/osd62-pm-brk-tisdk
    ```
-6. Run the setup script from osd62-pm-brk-tisdk(BRK_PATH) location
+6. Change directory to this repository location
+   ```
+   cd osd62-pm-brk-tisdk/
+   ```
+7. Make osd625_brk_sdk_setup script executable
+   ```
+   chmod +x osd625_brk_sdk_setup.sh
+   ```
+8. Run the setup script from osd62-pm-brk-tisdk(BRK_PATH) location
    ```
    ./osd625_brk_sdk_setup <PATH TO SDK>
    ```
-7. Cahnge directory to SDK_PATH
+9. Cahnge directory to SDK_PATH
    ```
    cd <PATH TO SDK>
    ```
-8. Build u-boot
+10. Build u-boot
    ```
    make u-boot
    ```
-9. Mount SD card's boot partition (If not automatically mounted. Note that in general, both boot and root partitions automatically mount after you insert the SD card into the Host computer)
+11. Mount SD card's boot partition (If not automatically mounted. Note that in general, both boot and root partitions automatically mount after you insert the SD card into the Host computer)
    ```
    sudo mount /dev/<sdX>1 /media/<user_name>/boot/
    ```
-10. Install u-boot binaries:
+12. Install u-boot binaries:
     ```
     make u-boot_install DESTDIR=/media/<user_name>/boot/
     ```
-11. Install Spalshscreen
+13. Install Spalshscreen
     ```
     cp octavo_884x266_32bpp.bmp.gz /media/<user_name>/boot/
     ```
-12. Build Linux device trees
+14. Build Linux device trees
     ```
     make linux-dtbs
     ```
-13. Mount SD card's root partition (If not automatically mounted. Note that in general, both boot and root partitions automatically mount after you insert the SD card into the Host computer)
+15. Mount SD card's root partition (If not automatically mounted. Note that in general, both boot and root partitions automatically mount after you insert the SD card into the Host computer)
     ```
     sudo mount /dev/<sdX>2 /media/<user_name>/root/
     ```
-14. Install OSD62-PM-BRK board device tree
+16. Install OSD62-PM-BRK board device tree
     ```
     sudo cp board-support/ti-linux-kernel-6.1.83+gitAUTOINC+c1c2f1971f-ti/arch/arm64/boot/dts/ti/k3-am625-osd625-brk.dtb /media/<user_name>/root/boot/dtb/ti/
     ```
-15. [#Optional] Install Display panel device tree overlay
+17. [#Optional] Install Display panel device tree overlay
     ```
     sudo cp board-support/ti-linux-kernel-6.1.83+gitAUTOINC+c1c2f1971f-ti/arch/arm64/boot/dts/ti/k3-am625-osd625-brk-microtips-mf101hie-panel.dtbo /media/<user_name>/root/boot/dtb/
     ```
-16. [#Optional] Install CSI Camera overlay
+18. [#Optional] Install CSI Camera overlay
     ```
     sudo cp board-support/ti-linux-kernel-6.1.83+gitAUTOINC+c1c2f1971f-ti/arch/arm64/boot/dts/ti/k3-am625-osd625-brk-csi2-ov5640.dtbo /media/<user_name>/root/boot/dtb/
     ```
-17. [#optional] Enable Display+Camera overlay. If you only have a display or camera connected, you can remove the other overlay from the command below:
+19. [#optional] Enable Display+Camera overlay. If you only have a display or camera connected, you can remove the other overlay from the command below:
     ```
     echo "name_overlays=k3-am625-osd625-brk-microtips-mf101hie-panel.dtbo k3-am625-osd625-brk-csi2-ov5640.dtbo" >> /media/<user_name>/boot/uEnv.txt
     ```
-18. Unmount the SD card
+20. Unmount the SD card
     ```
     sudo umount /media/<user_name>/*
     ```
