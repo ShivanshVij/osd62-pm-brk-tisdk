@@ -40,7 +40,7 @@ Tested on Ubuntu 22.04 LTS
 1. Download TI AM625-SK image from this link: https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-PvdSyIiioq/10.01.10.04/tisdk-default-image-am62xx-evm-10.01.10.04.rootfs.wic.xz
 2. Uncompress the file:
    ```
-   uxz tisdk-default-image-am62xx-evm-10.01.10.04.rootfs.wic.xz
+   unxz tisdk-default-image-am62xx-evm-10.01.10.04.rootfs.wic.xz
    ```
 3. Conect SD card to Host computer
 4. Determine the name of SD card:
