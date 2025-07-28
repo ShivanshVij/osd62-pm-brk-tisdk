@@ -126,7 +126,7 @@ The SD card is now prepared with a default TI AM625-SK image. You will need to m
     ```
     sudo umount /media/<user_name>/*
     ```
-The SD card is not ready. You can insert the SD card into OSD62-PM-BRK's SD card slot.
+The SD card is now ready. You can insert the SD card into OSD62-PM-BRK's SD card slot.
 
 ## Powering your OSD62-PM-BRK board
 1. Connect USB to UART adapter to Host machine USB port
