@@ -1,20 +1,21 @@
-From f58fd2f6c7c2e468bf76182943a09b7f0e50f05c Mon Sep 17 00:00:00 2001
+From 8ea3d5f4231b65636e442f1f76083af82ed5f00c Mon Sep 17 00:00:00 2001
 From: Neeraj Dantu <dantuguf14105@gmail.com>
-Date: Thu, 22 May 2025 12:10:07 -0400
-Subject: [PATCH] Add OSD62-PM-BRK board support
+Date: Fri, 1 Aug 2025 16:28:08 -0400
+Subject: [PATCH 2/3] Add OSD62-PM-BRK board support
 
 ---
- arch/arm/mach-k3/am62x/Kconfig     |  21 +
- board/octavo/osd62x/Kconfig        |  37 ++
- board/octavo/osd62x/MAINTAINERS    |   7 +
- board/octavo/osd62x/Makefile       |   8 +
- board/octavo/osd62x/board-cfg.yaml |  36 ++
- board/octavo/osd62x/osd62x.c       | 115 ++++
- board/octavo/osd62x/osd62x.env     |  33 +
- board/octavo/osd62x/pm-cfg.yaml    |  12 +
- board/octavo/osd62x/rm-cfg.yaml    | 981 +++++++++++++++++++++++++++++
- board/octavo/osd62x/sec-cfg.yaml   | 379 +++++++++++
- 10 files changed, 1629 insertions(+)
+ arch/arm/mach-k3/am62x/Kconfig                |  21 +
+ arch/arm/mach-k3/include/mach/am62_hardware.h |   1 +
+ board/octavo/osd62x/Kconfig                   |  37 +
+ board/octavo/osd62x/MAINTAINERS               |   7 +
+ board/octavo/osd62x/Makefile                  |   8 +
+ board/octavo/osd62x/board-cfg.yaml            |  36 +
+ board/octavo/osd62x/osd62x.c                  | 114 ++
+ board/octavo/osd62x/osd62x.env                |  33 +
+ board/octavo/osd62x/pm-cfg.yaml               |  12 +
+ board/octavo/osd62x/rm-cfg.yaml               | 981 ++++++++++++++++++
+ board/octavo/osd62x/sec-cfg.yaml              | 379 +++++++
+ 11 files changed, 1629 insertions(+)
  create mode 100644 board/octavo/osd62x/Kconfig
  create mode 100644 board/octavo/osd62x/MAINTAINERS
  create mode 100644 board/octavo/osd62x/Makefile
@@ -62,6 +63,18 @@ index c3677a55..05d595b6 100644
  endif
 +
 +
+diff --git a/arch/arm/mach-k3/include/mach/am62_hardware.h b/arch/arm/mach-k3/include/mach/am62_hardware.h
+index 168bea84..87583b50 100644
+--- a/arch/arm/mach-k3/include/mach/am62_hardware.h
++++ b/arch/arm/mach-k3/include/mach/am62_hardware.h
+@@ -49,6 +49,7 @@
+ #define MCU_CTRL_LFXOSC_CTRL			(MCU_CTRL_MMR0_BASE + 0x8038)
+ #define MCU_CTRL_LFXOSC_TRIM			(MCU_CTRL_MMR0_BASE + 0x803c)
+ #define MCU_CTRL_LFXOSC_32K_DISABLE_VAL		BIT(7)
++#define MCU_CTRL_LFXOSC_32K_BYPASS_VAL		BIT(4)
+ 
+ #define MCU_CTRL_DEVICE_CLKOUT_32K_CTRL		(MCU_CTRL_MMR0_BASE + 0x8058)
+ #define MCU_CTRL_DEVICE_CLKOUT_LFOSC_SELECT_VAL	(0x3)
 diff --git a/board/octavo/osd62x/Kconfig b/board/octavo/osd62x/Kconfig
 new file mode 100644
 index 00000000..2c759ac0
@@ -176,10 +189,10 @@ index 00000000..45c89dd1
 +        trace_src_enables: 0x00
 diff --git a/board/octavo/osd62x/osd62x.c b/board/octavo/osd62x/osd62x.c
 new file mode 100644
-index 00000000..94673f93
+index 00000000..8ec899d0
 --- /dev/null
 +++ b/board/octavo/osd62x/osd62x.c
-@@ -0,0 +1,115 @@
+@@ -0,0 +1,114 @@
 +// SPDX-License-Identifier: GPL-2.0+
 +/*
 + * Board specific initialization for OSD62x platforms
@@ -261,12 +274,11 @@ index 00000000..94673f93
 +{
 +	u32 val;
 +
-+	/* We have 32k crystal, so lets enable it */
++	/* We have external 32k oscillator. So, setting LFXOSC in bypass */
 +	val = readl(MCU_CTRL_LFXOSC_CTRL);
-+	val &= ~(MCU_CTRL_LFXOSC_32K_DISABLE_VAL);
++	val |= MCU_CTRL_LFXOSC_32K_BYPASS_VAL;
 +	writel(val, MCU_CTRL_LFXOSC_CTRL);
-+	/* Add any TRIM needed for the crystal here.. */
-+	/* Make sure to mux up to take the SoC 32k from the crystal */
++	/* Take the SoC 32k from the external oscillator */
 +	writel(MCU_CTRL_DEVICE_CLKOUT_LFOSC_SELECT_VAL,
 +	       MCU_CTRL_DEVICE_CLKOUT_32K_CTRL);
 +

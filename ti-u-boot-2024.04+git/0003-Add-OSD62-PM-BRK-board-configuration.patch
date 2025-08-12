@@ -1,21 +1,21 @@
-From 403b422e74cf2cd595bf3f12796b739edd53b645 Mon Sep 17 00:00:00 2001
+From ec02aae1abd7d3f9abf9247a241871a2b701aaf1 Mon Sep 17 00:00:00 2001
 From: Neeraj Dantu <dantuguf14105@gmail.com>
-Date: Tue, 20 May 2025 15:55:02 -0400
+Date: Fri, 1 Aug 2025 16:29:53 -0400
 Subject: [PATCH 3/3] Add OSD62-PM-BRK board configuration
 
 ---
- configs/am62x_osd62x_a53_defconfig | 160 +++++++++++++++++++++++++++++
- configs/am62x_osd62x_r5_defconfig  | 133 ++++++++++++++++++++++++
- 2 files changed, 293 insertions(+)
+ configs/am62x_osd62x_a53_defconfig | 164 +++++++++++++++++++++++++++++
+ configs/am62x_osd62x_r5_defconfig  | 133 +++++++++++++++++++++++
+ 2 files changed, 297 insertions(+)
  create mode 100644 configs/am62x_osd62x_a53_defconfig
  create mode 100644 configs/am62x_osd62x_r5_defconfig
 
 diff --git a/configs/am62x_osd62x_a53_defconfig b/configs/am62x_osd62x_a53_defconfig
 new file mode 100644
-index 00000000..46dc00f2
+index 00000000..6355fd53
 --- /dev/null
 +++ b/configs/am62x_osd62x_a53_defconfig
-@@ -0,0 +1,160 @@
+@@ -0,0 +1,164 @@
 +CONFIG_ARM=y
 +CONFIG_ARCH_K3=y
 +CONFIG_SYS_MALLOC_F_LEN=0x8000
@@ -114,6 +114,10 @@ index 00000000..46dc00f2
 +CONFIG_SPL_DM_PCA953X=y
 +CONFIG_DM_I2C=y
 +CONFIG_SYS_I2C_OMAP24XX=y
++CONFIG_LED=y
++CONFIG_SPL_LED=y
++CONFIG_LED_GPIO=y
++CONFIG_SPL_LED_GPIO=y
 +CONFIG_DM_MAILBOX=y
 +CONFIG_K3_SEC_PROXY=y
 +CONFIG_FS_LOADER=y
