@@ -1,7 +1,7 @@
-From e3beb26f80d037cdf6e8b7c890c0f646603b87e6 Mon Sep 17 00:00:00 2001
+From c925152992ee307ba005405c1d9463883595d398 Mon Sep 17 00:00:00 2001
 From: Neeraj Dantu <dantuguf14105@gmail.com>
-Date: Tue, 6 May 2025 16:32:02 -0400
-Subject: [PATCH 4/4] Add support to enable ADC081C kernel module for
+Date: Fri, 1 Aug 2025 15:54:01 -0400
+Subject: [PATCH 4/5] Add support to enable ADC081C kernel module for
  OSD625-PM-BRK
 
 ---

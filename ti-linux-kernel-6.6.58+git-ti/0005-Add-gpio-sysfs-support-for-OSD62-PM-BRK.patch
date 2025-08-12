@@ -1,0 +1,23 @@
+From 3c401321e0a11d73f456d38c441c86487ec8ff85 Mon Sep 17 00:00:00 2001
+From: Neeraj Dantu <dantuguf14105@gmail.com>
+Date: Fri, 1 Aug 2025 15:54:56 -0400
+Subject: [PATCH 5/5] Add gpio sysfs support for OSD62-PM-BRK
+
+---
+ arch/arm64/configs/defconfig | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index bc2e6647c..22949513f 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -1678,3 +1678,6 @@ CONFIG_CORESIGHT_STM=m
+ CONFIG_CORESIGHT_CPU_DEBUG=m
+ CONFIG_CORESIGHT_CTI=m
+ CONFIG_MEMTEST=y
++CONFIG_EXPERT=y
++CONFIG_GPIO_SYSFS=y
++CONFIG_HAVE_ARCH_KCSAN=y
+-- 
+2.34.1
+
