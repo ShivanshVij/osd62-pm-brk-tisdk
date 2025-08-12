@@ -36,6 +36,9 @@ Tested on Ubuntu 22.04 LTS
 | U-Boot | 2024.04 | 
 | Linux Kernel | v6.6.58-ti | 
 
+## Modifying Beagleboard.org image
+Please see https://github.com/octavosystems/osd62-pm-brk-tisdk/wiki/Modifying-a-Beagleboard.org-image-for-OSD62%E2%80%90PM%E2%80%90BRK for procedure to create a Beagleboard.org image for OSD62-PM-BRK
+
 ## Preparing an SD card
 1. Download TI AM625-SK image from this link: https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-PvdSyIiioq/10.01.10.04/tisdk-default-image-am62xx-evm-10.01.10.04.rootfs.wic.xz
 2. Uncompress the file:
