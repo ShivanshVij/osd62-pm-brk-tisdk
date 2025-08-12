@@ -144,7 +144,7 @@ The SD card is now ready. You can insert the SD card into OSD62-PM-BRK's SD card
 ## Powering your OSD62-PM-BRK board
 1. Connect USB to UART adapter to Host machine USB port
 2. Connect UART side of the USB to UART adapter to UART header(JP1) of OSD62-PM-BRK
-3. Connect accessories: Camera/Display. Note that the display comes with it's own power supply. Display needs to be powered seperately from the board
+3. Connect accessories: Camera/Display. Note that the display comes with it's own power supply. Display needs to be powered separately from the board
 4. Bring-up a terminal application(Putty/Minicom/picocom) on host machine for the USB to UART adapter:
    ```
    picocom -b 115200 /dev/ttyUSB[x]
