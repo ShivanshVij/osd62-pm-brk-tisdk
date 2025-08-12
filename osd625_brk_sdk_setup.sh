@@ -48,11 +48,19 @@ check_sdk_install() {
 }
 
 patch_rules() {
-    # Override Rules.make for OSD625-PM BRK
-    sed -i 's/PLATFORM?=am62xx-evm/PLATFORM?=am625-osd625-brk/' ${SDK_PATH}/Rules.make
-    sed -i 's/UBOOT_MACHINE=am62x_evm_a53_defconfig/UBOOT_MACHINE=am62x_osd62x_a53_defconfig/' ${SDK_PATH}/Rules.make
-    sed -i 's/UBOOT_MACHINE_R5=am62x_evm_r5_defconfig/UBOOT_MACHINE_R5=am62x_osd62x_r5_defconfig/' ${SDK_PATH}/Rules.make
-    sed -i 's/MKIMAGE_DTB_FILE=a53\/arch\/arm\/dts\/k3-am625-sk.dtb/MKIMAGE_DTB_FILE=a53\/arch\/arm\/dts\/k3-am625-osd625-brk.dtb/' ${SDK_PATH}/Rules.make
+    # Check if makefiles are already configured for OSD62-PM-BRK
+    if grep "PLATFORM?=am625-osd625-brk" ${SDK_PATH}/Rules.make; then
+      echo "Makefiles already patched. Moving on"
+    else
+      # Override Rules.make for OSD625-PM BRK
+      sed -i 's/PLATFORM?=am62xx-evm/PLATFORM?=am625-osd625-brk/' ${SDK_PATH}/Rules.make
+      sed -i 's/UBOOT_MACHINE=am62x_evm_a53_defconfig/UBOOT_MACHINE=am62x_osd62x_a53_defconfig/' ${SDK_PATH}/Rules.make
+      sed -i 's/UBOOT_MACHINE_R5=am62x_evm_r5_defconfig/UBOOT_MACHINE_R5=am62x_osd62x_r5_defconfig/' ${SDK_PATH}/Rules.make
+      sed -i 's/MKIMAGE_DTB_FILE=a53\/arch\/arm\/dts\/k3-am625-sk.dtb/MKIMAGE_DTB_FILE=a53\/arch\/arm\/dts\/k3-am625-osd625-brk.dtb/' ${SDK_PATH}/Rules.make
+    
+      # Modify path for kernel module install
+      sed -i 's/INSTALL_MOD_PATH=\$(DESTDIR)/INSTALL_MOD_PATH=\$(DESTDIR)\/usr\//' ${SDK_PATH}/makerules/Makefile_linux
+    fi
 }
 
 patch_uboot() {
