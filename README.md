@@ -7,9 +7,6 @@
   <a href="https://github.com/octavosystems/osd62-pm-brk-tisdk">
     <img src="images/Figure 2 OSD62-PM-BRK Features.png" alt="Logo" width="540" height="286">
   </a>
-  <a href="https://github.com/octavosystems/osd62-pm-brk-tisdk">
-    <img src="images/Figure 2 OSD62-PM-BRK Features Back.png alt="Logo">
-  </a>
 
   <h3 align="center">TI SDK support for OSD62-PM-BRK</h3>
 
