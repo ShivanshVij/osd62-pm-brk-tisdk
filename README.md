@@ -36,7 +36,7 @@ Tested on Ubuntu 22.04 LTS
 | U-Boot | 2024.04 | 
 | Linux Kernel | v6.6.58-ti | 
 
-## Wiki page for modifying Beagleboard.org image
+## Wiki page for modifying Beagleboard.org® image
 Please see https://github.com/octavosystems/osd62-pm-brk-tisdk/wiki/Modifying-a-Beagleboard.org-image-for-OSD62%E2%80%90PM%E2%80%90BRK for procedure to create a Beagleboard.org image for OSD62-PM-BRK
 
 # TI SDK Image for OSD62-PM-BRK
