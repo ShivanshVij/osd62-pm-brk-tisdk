@@ -117,7 +117,7 @@ The SD card is now prepared with a default TI AM625-SK image. You will need to m
     ```
 17. Install OSD62-PM-BRK board device tree
     ```
-    sudo cp board-support/ti-linux-kernel-6.1.83+gitAUTOINC+c1c2f1971f-ti/arch/arm64/boot/dts/ti/k3-am625-osd625-brk.dtb /media/<user_name>/root/boot/dtb/ti/
+    sudo cp board-support/ti-linux-kernel-6.6.58+git-ti/arch/arm64/boot/dts/ti/k3-am625-osd625-brk.dtb /media/<user_name>/root/boot/dtb/ti/
     ```
 18. Build Linux kernel and kernel modules
     ```
@@ -129,11 +129,11 @@ The SD card is now prepared with a default TI AM625-SK image. You will need to m
     ```
 20. [#Optional] Install Display panel device tree overlay
     ```
-    sudo cp board-support/ti-linux-kernel-6.1.83+gitAUTOINC+c1c2f1971f-ti/arch/arm64/boot/dts/ti/k3-am625-osd625-brk-microtips-mf101hie-panel.dtbo /media/<user_name>/root/boot/dtb/
+    sudo cp board-support/ti-linux-kernel-6.6.58+git-ti/arch/arm64/boot/dts/ti/k3-am625-osd625-brk-microtips-mf101hie-panel.dtbo /media/<user_name>/root/boot/dtb/
     ```
 21. [#Optional] Install CSI Camera overlay
     ```
-    sudo cp board-support/ti-linux-kernel-6.1.83+gitAUTOINC+c1c2f1971f-ti/arch/arm64/boot/dts/ti/k3-am625-osd625-brk-csi2-ov5640.dtbo /media/<user_name>/root/boot/dtb/
+    sudo cp board-support/ti-linux-kernel-6.6.58+git-ti/arch/arm64/boot/dts/ti/k3-am625-osd625-brk-csi2-ov5640.dtbo /media/<user_name>/root/boot/dtb/
     ```
 22. [#optional] Enable Display+Camera overlay. If you only have a display or camera connected, you can remove the other overlay from the command below:
     ```
