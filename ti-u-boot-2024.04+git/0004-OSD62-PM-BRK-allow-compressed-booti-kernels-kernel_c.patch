@@ -1,0 +1,28 @@
+From 01e26bc44e16104bad7f66b64c0f8a2031e7512d Mon Sep 17 00:00:00 2001
+From: Robert Nelson <robertcnelson@gmail.com>
+Date: Thu, 9 Oct 2025 12:01:52 -0500
+Subject: [PATCH 4/4] OSD62-PM-BRK: allow compressed booti kernels
+ (kernel_comp_addr_r/kernel_comp_size)
+
+Signed-off-by: Robert Nelson <robertcnelson@gmail.com>
+---
+ board/octavo/osd62x/osd62x.env | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/board/octavo/osd62x/osd62x.env b/board/octavo/osd62x/osd62x.env
+index 71b11950d8b..4cca035531a 100644
+--- a/board/octavo/osd62x/osd62x.env
++++ b/board/octavo/osd62x/osd62x.env
+@@ -19,6 +19,9 @@ bootpart=1:2
+ bootdir=/boot
+ rd_spec=-
+ 
++kernel_comp_addr_r=0x85000000
++kernel_comp_size=0x20000000
++
+ splashfile=octavo_884x266_32bpp.bmp.gz
+ splashimage=0x80200000
+ splashpos=m,m
+-- 
+2.51.0
+
