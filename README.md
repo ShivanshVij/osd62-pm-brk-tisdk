@@ -37,7 +37,7 @@ Tested on Ubuntu 22.04 LTS
 | Linux Kernel | v6.6.58-ti | 
 
 ## Wiki page for modifying Beagleboard.org® image
-Please see https://github.com/octavosystems/osd62-pm-brk-tisdk/wiki/Modifying-a-Beagleboard.org-image-for-OSD62%E2%80%90PM%E2%80%90BRK for procedure to create a Beagleboard.org image for OSD62-PM-BRK
+Please see [https://github.com/octavosystems/osd62-pm-brk-tisdk/wiki/Modifying-a-Beagleboard.org-image-for-OSD62%E2%80%90PM%E2%80%90BRK](https://github.com/octavosystems/osd62-pm-brk-tisdk/wiki/Modifying-a-Beagleboard.org%C2%AE-image-for-OSD62%E2%80%90PM%E2%80%90BRK) for procedure to create a Beagleboard.org image for OSD62-PM-BRK
 
 # TI SDK Image for OSD62-PM-BRK
 ## Preparing an SD card
