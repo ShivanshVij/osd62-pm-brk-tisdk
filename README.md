@@ -154,7 +154,7 @@ The SD card is now ready. You can insert the SD card into OSD62-PM-BRK's SD card
    picocom -b 115200 /dev/ttyUSB[x]
    ```
 5. Use a USB-C cable to connect the host machine to OSD62-PM-BRK
-6. Bootlogs should appeat on the terminal application
+6. Bootlogs should appear on the terminal application
 7. Board login username: "root". No password is set for this user.
 8. Start your application development!
 
