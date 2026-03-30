@@ -1,0 +1,132 @@
+From 42e416cfa55f62bc09461710e8935a1d8b11fd83 Mon Sep 17 00:00:00 2001
+From: Shivansh Vij <shivanshvij@outlook.com>
+Date: Mon, 30 Mar 2026 00:06:05 -0700
+Subject: [PATCH] Add QSPI and eMMC support
+
+Add OSPI/QSPI NOR flash (W25Q128JVSIQ) support on OSPI0 and eMMC
+(SDINADF4-16G-H) support on MMC0 for the Nox KVM board.
+---
+ .../arm64/boot/dts/ti/k3-am625-osd625-brk.dts | 86 +++++++++++++++++++
+ 1 file changed, 86 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/ti/k3-am625-osd625-brk.dts b/arch/arm64/boot/dts/ti/k3-am625-osd625-brk.dts
+index a17128ff7..de2d9c5cf 100644
+--- a/arch/arm64/boot/dts/ti/k3-am625-osd625-brk.dts
++++ b/arch/arm64/boot/dts/ti/k3-am625-osd625-brk.dts
+@@ -27,6 +27,7 @@ opp-1400000000 {
+ 
+ 	aliases {
+ 		serial2 = &main_uart0;
++		mmc0 = &sdhci0;
+ 		mmc1 = &sdhci1;
+ 		usb0 = &usb0;
+ 		usb1 = &usb1;
+@@ -319,6 +320,33 @@ AM62X_IOPAD(0x244, PIN_OUTPUT, 7) /* MMC1_SDWP.GPIO1_49 */
+ 		>;
+ 	};
+ 
++	main_mmc0_pins_default: main-mmc0-default-pins {
++		bootph-all;
++		pinctrl-single,pins = <
++			AM62X_IOPAD(0x220, PIN_INPUT, 0) /* (K1) MMC0_CMD */
++			AM62X_IOPAD(0x218, PIN_INPUT, 0) /* (J1) MMC0_CLK */
++			AM62X_IOPAD(0x214, PIN_INPUT, 0) /* (K2) MMC0_DAT0 */
++			AM62X_IOPAD(0x210, PIN_INPUT, 0) /* (L1) MMC0_DAT1 */
++			AM62X_IOPAD(0x20c, PIN_INPUT, 0) /* (L2) MMC0_DAT2 */
++			AM62X_IOPAD(0x208, PIN_INPUT, 0) /* (M1) MMC0_DAT3 */
++			AM62X_IOPAD(0x204, PIN_INPUT, 0) /* (M2) MMC0_DAT4 */
++			AM62X_IOPAD(0x200, PIN_INPUT, 0) /* (N1) MMC0_DAT5 */
++			AM62X_IOPAD(0x1fc, PIN_INPUT, 0) /* (N2) MMC0_DAT6 */
++			AM62X_IOPAD(0x1f8, PIN_INPUT, 0) /* (P1) MMC0_DAT7 */
++		>;
++	};
++
++	ospi0_pins_default: ospi0-default-pins {
++		pinctrl-single,pins = <
++			AM62X_IOPAD(0x000, PIN_OUTPUT, 0) /* (A24) OSPI0_CLK */
++			AM62X_IOPAD(0x02c, PIN_OUTPUT, 0) /* (D25) OSPI0_CSn0 */
++			AM62X_IOPAD(0x00c, PIN_INPUT, 0)  /* (B24) OSPI0_D0 */
++			AM62X_IOPAD(0x010, PIN_INPUT, 0)  /* (A25) OSPI0_D1 */
++			AM62X_IOPAD(0x014, PIN_INPUT, 0)  /* (B25) OSPI0_D2 */
++			AM62X_IOPAD(0x018, PIN_INPUT, 0)  /* (A26) OSPI0_D3 */
++		>;
++	};
++
+ 	vdd_mmc1_pins_default: vdd-mmc1-default-pins {
+ 		bootph-all;
+ 		pinctrl-single,pins = <
+@@ -491,6 +519,18 @@ eeprom@50 {
+ };
+ 
+ 
++&sdhci0 {
++	/* eMMC */
++	bootph-all;
++	status = "okay";
++	bus-width = <8>;
++	non-removable;
++	ti,driver-strength-ohm = <50>;
++	disable-wp;
++	pinctrl-names = "default";
++	pinctrl-0 = <&main_mmc0_pins_default>;
++};
++
+ &sdhci1 {
+ 	/* SD/MMC */
+ 	vmmc-supply = <&vdd_mmc1>;
+@@ -502,6 +542,52 @@ &sdhci1 {
+ 	disable-wp;
+ };
+ 
++&ospi0 {
++	status = "okay";
++	pinctrl-names = "default";
++	pinctrl-0 = <&ospi0_pins_default>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0x0>;
++		spi-tx-bus-width = <4>;
++		spi-rx-bus-width = <4>;
++		spi-max-frequency = <25000000>;
++		cdns,tshsl-ns = <60>;
++		cdns,tsd2d-ns = <60>;
++		cdns,tchsh-ns = <60>;
++		cdns,tslch-ns = <60>;
++		cdns,read-delay = <4>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "ospi.tiboot3";
++				reg = <0x000000 0x080000>;
++			};
++			partition@80000 {
++				label = "ospi.tispl";
++				reg = <0x080000 0x200000>;
++			};
++			partition@280000 {
++				label = "ospi.u-boot";
++				reg = <0x280000 0x400000>;
++			};
++			partition@680000 {
++				label = "ospi.env";
++				reg = <0x680000 0x020000>;
++			};
++			partition@6a0000 {
++				label = "ospi.env.backup";
++				reg = <0x6a0000 0x020000>;
++			};
++		};
++	};
++};
++
+ &mailbox0_cluster0 {
+ 	mbox_m4_0: mbox-m4-0 {
+ 		ti,mbox-rx = <0 0 0>;
+-- 
+2.50.1 (Apple Git-155)
+
