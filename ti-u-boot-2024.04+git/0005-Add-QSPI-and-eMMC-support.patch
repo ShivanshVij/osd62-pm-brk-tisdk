@@ -1,4 +1,4 @@
-From c28f239bf6d927a1348c42c66ee06fd9367321c5 Mon Sep 17 00:00:00 2001
+From e71d7f7ad460d9618166bbd08c5f9d6c8e7178ea Mon Sep 17 00:00:00 2001
 From: Shivansh Vij <shivanshvij@outlook.com>
 Date: Mon, 30 Mar 2026 00:04:02 -0700
 Subject: [PATCH] Add QSPI and eMMC support
@@ -12,7 +12,7 @@ Add OSPI/QSPI NOR flash (W25Q128JVSIQ) support on OSPI0 and eMMC
  3 files changed, 91 insertions(+)
 
 diff --git a/arch/arm/dts/k3-am625-osd625-brk.dts b/arch/arm/dts/k3-am625-osd625-brk.dts
-index 979577a0..0fcde751 100644
+index 979577a0..5f160bbf 100644
 --- a/arch/arm/dts/k3-am625-osd625-brk.dts
 +++ b/arch/arm/dts/k3-am625-osd625-brk.dts
 @@ -25,6 +25,7 @@
@@ -91,8 +91,8 @@ index 979577a0..0fcde751 100644
 +		bootph-all;
 +		compatible = "jedec,spi-nor";
 +		reg = <0x0>;
-+		spi-tx-bus-width = <4>;
-+		spi-rx-bus-width = <4>;
++		spi-tx-bus-width = <1>;
++		spi-rx-bus-width = <1>;
 +		spi-max-frequency = <25000000>;
 +		cdns,tshsl-ns = <60>;
 +		cdns,tsd2d-ns = <60>;
